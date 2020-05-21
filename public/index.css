@@ -1,0 +1,100 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	box-sizing: border-box;
+	background: #1b1b2f;
+}
+*, *::before, *::after{
+	box-sizing: inherit;
+}
+::selection{
+	background: red;
+	color: #fff;
+}
+body{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 1em;
+}
+h1.text {
+	font-weight: 400;
+	transform: translateY(4em);
+	color: red;
+}
+.diamond {
+	position: absolute;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+}
+.diamond span, .diamond span::before{
+	content: '';
+	position: absolute;
+	display: block;	
+}
+.diamond span:nth-child(1) {
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	background: red;
+	transform: skew(-30deg);
+	z-index: 1;
+}
+.diamond span:nth-child(1)::before {
+	top: 100%;
+	left: 60px;	
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 108px 0 12px 50px;
+	border-color: red transparent transparent;
+	filter: brightness(0.95);
+	transform: skewX(45deg);
+}
+.diamond span:nth-child(2) {
+	top: 0;
+	left: 35px;
+	width: 90px;
+	height: 50px;
+	background: red;
+	filter: brightness(0.9);
+	z-index: 0;
+}
+.diamond span:nth-child(2)::before {
+	top: 100%;
+	left: -10px;
+	height: 0;
+	width: 0;
+	filter: brightness(0.9);
+	border-top: 108px solid red;
+	border-left: 55px solid transparent;
+	border-right: 55px solid transparent;
+
+}
+.diamond span:nth-child(3) {
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	background: firebrick;
+	transform: skew(30deg);
+	z-index: 1;
+}
+.diamond span:nth-child(3)::before {
+	top: 100%;
+	left: -108px;	
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 108px 50px 110px 0;
+	border-color: darkred transparent transparent;
+	transform: skewX(-45deg);
+}
